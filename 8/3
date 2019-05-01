@@ -1,0 +1,40 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+#include <queue>
+using namespace std;
+
+class Owner {
+public:
+	string Name;
+	int number;
+};
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int  n;
+	queue <Owner> Work;
+	Owner Car;
+		cout << "Автомойка работает 4 часа и за час может помыть 2 авто" << endl;
+			cout << "Cколько авто приехало?"<<endl;
+			cin >> n;
+			if (n > 0) {
+				cout << "Введите имя владельца и номер авто" << endl;
+				for (int q = 0; q < n; q++) {
+					cin >> Car.Name >> Car.number;
+					Work.push(Car);
+				}
+				for (int i = 0; i < 8; i++) {
+					Car = Work.front();
+					cout << "Авто владельца " << Car.Name << " с номерами " << Car.number << " было обслужено." << endl;
+					Work.pop();
+					if (Work.size() == 0)break;
+				}	
+				if (Work.size() > 0)cout << "Не все клиенты были обслужены" << endl;
+				else cout << "Все клиенты были обслужены" << endl;
+			}
+			else {
+				cout << "Нет клиентов" << endl;
+			}
+}
