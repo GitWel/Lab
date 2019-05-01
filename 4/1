@@ -1,0 +1,31 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Child {
+private:
+	string firstname;
+	string name;
+	int age;
+public:
+	Child(string firstnam, string nam, int ag) {
+		firstname = firstnam;
+		name = nam;
+		age = ag;
+	}
+	void out() {
+		cout << firstname << "-Имя   " << name << "-Фамилия   " << age <<"-Возраст"<< endl;
+	}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	Child ch1 = { "Dima", "Gordeev", 18 };
+	Child ch2 = { "Ilya", "Semen", 15 };
+	ch1.out();
+	ch2.out();
+	return 0;
+	system("pause");
+}
