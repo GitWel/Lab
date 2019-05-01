@@ -1,0 +1,38 @@
+#include "pch.h"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Vector {
+public:
+	double X, Y;
+	double abs() {
+		return sqrt(pow(X, 2) + pow(Y, 2));
+	}
+	Vector summ(Vector a, Vector b) {
+		Vector C;
+		C.X = a.X + b.X;
+		C.Y = a.Y + b.Y;
+		return C;
+	}
+	Vector dif(Vector a, Vector b) {
+		Vector C;
+		C.X = a.X - b.X;
+		C.Y = a.Y - b.Y;
+		return C;
+	}
+};
+
+int main()
+{
+	double sum,dif;
+	Vector vec1,vec2,vec11,vec22;
+	cin >> vec1.X >> vec1.Y;
+	cin >> vec2.X >> vec2.Y;
+	cout << vec1.abs()<<"  " << vec2.abs() <<endl;
+	vec11 = vec1.summ(vec1,vec2);
+	vec22 = vec1.dif(vec1, vec2);
+	cout << vec11.X<<";"<<vec11.Y << "  " << vec22.X << ";" << vec22.Y;
+	return 0;
+	system("pause");
+}
