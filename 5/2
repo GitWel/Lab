@@ -1,0 +1,35 @@
+#include "pch.h"
+#include <iostream>
+using namespace std;
+
+class Vector {
+public:
+	double X, Y;
+	double abs() {
+		return sqrt(pow(X, 2) + pow(Y, 2));
+	}
+	Vector summ(Vector a, Vector b) {
+		Vector C = { a.X + b.X , a.Y + b.Y };
+		return C;
+	}
+	Vector dif(Vector a, Vector b) {
+		Vector C = { a.X - b.X , a.Y - b.Y };
+		return C;
+	}
+	Vector &operator=(Vector a) {
+	X = a.X;
+	Y = a.Y;
+}
+	Vector& operator>>(Vector a) {
+	cin >> a.X >> a.Y;
+	X = a.X;
+	Y = a.Y;
+}
+	Vector& operator<<(Vector a) {
+	cout << "(" << a.X << "," << a.Y << ")\n";
+}
+	bool friend operator==(Vector a, Vector b) {
+		if (a.X == b.X && a.Y == b.Y)return true;
+		else return false;
+	}
+};
