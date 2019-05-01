@@ -1,0 +1,50 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Human {
+protected:
+	string suname, name, midname;
+	int age;
+public:
+	Human() {
+	}
+	virtual void print() = 0;
+	~Human() {
+	}
+};
+
+class Student :public Human {
+private:
+	bool on_lesson;
+public:
+	Student(string suname, string name, string midname, int age, bool on_lesson) :Human() {
+		this->suname = suname;
+		this->name = name;
+		this->midname = midname;
+		this->age = age;
+		this->on_lesson = on_lesson;
+	}
+	void print() {
+		cout << suname << " " << name << " " << midname << ", " << age << " лет, присутствие уроке: " << on_lesson << endl;
+	}
+	~Student() {}
+};
+
+class Boss :public Human {
+private:
+	int number_on_workes;
+public:
+	Boss(string suname, string name, string midname, int age, int number_on_workes) :Human() {
+		this->suname = suname;
+		this->name = name;
+		this->midname = midname;
+		this->age = age;
+		this->number_on_workes = number_on_workes;
+	}
+	void print() {
+		cout << suname << " " << name << " " << midname << ", " << age << " лет,подчиненные : " << number_on_workes << endl;
+	}
+	~Boss() {}
+};
