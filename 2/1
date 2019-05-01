@@ -1,0 +1,23 @@
+#include "pch.h"
+#include <iostream>
+using namespace std;
+
+int summ(int a, int b) { return a + b; }
+int dif(int a, int b) { return a - b; }
+int divi(int a, int b) { return a / b; }
+int sq(int a, int b) { return a * b; }
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	int a, b, res;
+	int(*funk[4])(int a, int b) = {summ,dif,divi,sq};
+	cout << "Введите числа" << endl;
+	cin >> a >> b;
+	if (a < b)res = funk[0](a, b);
+	if (a > b)res = funk[1](a, b);
+	if (a%b == 0)res = funk[2](a, b);
+	if (a==b)res = funk[3](a, b);
+	cout << res;
+	return 0;
+}
