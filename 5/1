@@ -1,0 +1,40 @@
+#include "pch.h"
+#include <iostream>
+using namespace std;
+
+class Complex {
+public:
+	double re;
+	double im;
+
+	Complex& operator>>(Complex a) {
+		cin >> a.re;
+		cin >> a.im;
+		re = a.re;
+		im = a.im;
+}	
+	Complex& operator<<(Complex a) {
+	cout << a.re << " " << a.im << endl;
+}
+	Complex& operator+(Complex a) {
+	re = re + a.re;
+	im = im + a.im;
+}
+	Complex& operator-(Complex a) {
+	re = re - a.re;
+	im = im - a.im;
+}
+	Complex& operator=(Complex a) {
+	re = a.re;
+	im = a.im;
+}
+
+	bool friend operator==(Complex a, Complex b) {
+		if (a.re == b.re && a.im == b.im)return true;
+		else return false;
+	}
+
+	void out() {
+		cout << re << "  " << im << endl;
+	}
+};
