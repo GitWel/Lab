@@ -1,0 +1,20 @@
+#include <iostream>
+#include <list>
+//#include <5.1>
+
+using namespace std;
+
+int main()
+{
+	list<Complex> c;
+	int num;
+	cout << "Чисел: ";
+	cin >> num;
+	for (int i = 0; i < num; i++) {
+		Complex compl();
+		cout << "Введите действ и мнимую часть числа:";
+		cin >> compl;
+		c.push_back(compl);
+	}
+	return 0;
+}
