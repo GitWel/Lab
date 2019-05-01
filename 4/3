@@ -1,0 +1,31 @@
+#include "pch.h"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Complex {
+public:
+	double re;
+	double im;
+	double modul;
+	void abs() {
+		modul = sqrt(pow(re, 2) + pow(im, 2));
+	}
+	void out() {
+		cout << re << " " << im << " " << modul << endl;
+	}
+	Complex(double rea, double ima) {
+		re = rea;
+		im = ima;
+	}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	Complex ch = {434,45.67};
+	ch.abs();
+	ch.out();
+	return 0;
+	system("pause");
+}
