@@ -1,0 +1,26 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Tiles {
+public:
+	string brand;
+	int size_h, size_w, price;
+	void getData() {
+		cout << brand << "-марка, " << size_h << "-высота,  " << size_w << "-ширина,  " << price << "-цена,  " << endl;
+	}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	Tiles t1, t2;
+	cout << "Введите информацию(марка,высота,ширина,цена)" << endl;
+	cin >> t1.brand >> t1.size_h >> t1.size_w >> t1.price;
+	cin >> t2.brand >> t2.size_h >> t2.size_w >> t2.price;
+	t1.getData();
+	t2.getData();
+	return 0;
+	system("pause");
+}
