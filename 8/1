@@ -1,0 +1,20 @@
+#include <iostream>
+#include <vector>
+//#include 6.1
+using namespace std;
+
+int main()
+{
+	vector<Student> vec;
+	int num;
+	cout << "Кол-во обучающихся :";
+	cin >> num;
+	for (int i = 0; i < num; i++) {
+		Student* Stude;
+		cout << "Vvedite namei familiu i gruppy: ";
+		cin >> stude->name >> stude->family >> stude->group;
+		cin >> stude->age;
+		vec.push_back(*stude);
+	};
+	return 0;
+}
