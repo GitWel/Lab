@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Animal {
+public:
+	string size;
+	string food;
+	string name;
+	void in() {
+		cin >> name >> size >> food;
+	}
+	void out() {
+		cout << name << " " << size << " " << food << " " << endl;
+	}
+};
+
+
+class Dog :public Animal {
+public:
+	Dog(string name, string size, string food) {
+		this->name = name;
+		this->size = size;
+		food = "cats";
+	}
+};
+
+class Cat :public Animal {
+public:
+	Cat(string name, string size, string food) {
+		this->name = name;
+		this->size = size;
+		food = "meat";
+	}
+};
