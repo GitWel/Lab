@@ -1,0 +1,28 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+public:
+	string firstname;
+	string name;
+	int course;
+	int №group;
+	int age;
+	Student(string firstname, string name, int №group,int course, int age) {
+		this->firstname = firstname;
+		this->name = name;
+		this->№group = №group;
+		this->age = age;
+	}
+};
+
+class Star :public Student {
+public:
+	int mob;
+	Star(string firstname, string name, int №group, int course, int age,int mob): Student (firstname,name, №group, course, age) {
+		this->mob = mob;
+	}
+
+};
